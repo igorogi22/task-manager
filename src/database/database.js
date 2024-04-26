@@ -86,5 +86,4 @@ export class LocalDatabase {
 			this.#persist();
 		}
 	}
-
 }

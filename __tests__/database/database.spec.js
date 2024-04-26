@@ -1,9 +1,6 @@
 import fs from 'node:fs';
-import path from 'node:path';
 
 import { LocalDatabase } from '../../src/database/database';
-
-const databasePath = path.resolve(__dirname, '../../db.json');
 
 describe('Database', () => {
     afterAll(() => {
@@ -12,16 +9,8 @@ describe('Database', () => {
         }
     });
 
-    it('should create a database file', done => {
-        new LocalDatabase();
-
-        setTimeout(() => {
-            expect(fs.existsSync('./db.json')).toBe(true);
-            done();
-        }, 1000);
-    });
     it('should create a database file', () => {
-        const database = new LocalDatabase();
+        new LocalDatabase();
         
         expect(fs.existsSync('./db.json')).toBe(true);
     });

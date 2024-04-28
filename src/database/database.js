@@ -2,7 +2,7 @@ import fs from 'node:fs/promises';
 import { randomUUID as uuid } from 'node:crypto';
 import path from 'node:path';
 
-const databasePath = path.resolve(__dirname, '../../db.json');
+const databasePath = './db.json';
 
 export class LocalDatabase {
     #database = {};
